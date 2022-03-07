@@ -1,0 +1,2 @@
+com.yassine.lafryhi.jee.seance1.dao.DaoImpl
+com.yassine.lafryhi.jee.seance1.metier.MetierImpl
