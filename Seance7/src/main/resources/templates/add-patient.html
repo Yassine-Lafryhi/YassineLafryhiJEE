@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+
+<div layout:fragment="content" th:align="center">
+
+    <div style="padding: 48px" class="flex flex-col justify-center h-full">
+        <div class="w-full  mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
+            <header class="px-5 py-4 border-b border-gray-100">
+                <h1 class="flex justify-center items-center py-5 text-pink-600 text-xl font-bold">Add a new patient</h1>
+            </header>
+            <div class="p-3">
+                <div class="overflow-x-auto flex justify-center items-center">
+                    <form method="post" th:action="@{save-add}">
+                        <div>
+                            <label>Name : </label>
+                            <div class="flex items-center border-2 py-2 px-3 rounded-2xl">
+                                <input id="nom" class="pl-2 outline-none border-none" type="text" name="name">
+                            </div>
+                            <span class="text-red-600" th:errors="${patient.name}"></span>
+                        </div>
+                        <br>
+                        <div>
+                            <label>Birth date : </label>
+                            <div class="flex items-center border-2 py-2 px-3 rounded-2xl">
+                                <input class="pl-2 outline-none border-none" type="date" name="birthDate">
+                            </div>
+                            <span class="text-red-600" th:errors="${patient.birthDate}"></span>
+                        </div>
+                        <br>
+                        <div>
+                            <label>Is he sick : </label>
+                            <div class="flex items-center border-2 py-2 px-3 rounded-2xl">
+                                <input class="pl-2 outline-none border-none" type="checkbox" name="sick">
+                            </div>
+                            <span class="text-red-600" th:errors="${patient.sick}"></span>
+                        </div>
+                        <br>
+                        <div>
+                            <label>Score : </label>
+                            <div class="flex items-center border-2 py-2 px-3 rounded-2xl">
+                                <input class="pl-2 outline-none border-none" type="number" name="score">
+                            </div>
+                            <span class="text-red-600" th:errors="${patient.score}"></span>
+                        </div>
+                        <br>
+                        <div>
+                            <button type="submit" class="bg-green-600 px-4 py-2 rounded-full text-white font-semibold tracking-wide cursor-pointer">
+                                Add
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
