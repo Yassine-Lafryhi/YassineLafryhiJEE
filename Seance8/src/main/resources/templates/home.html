@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="layout">
+
+<div layout:fragment="content">
+    <h1 sec:authorize="!hasRole('ADMIN') && !hasRole('USER')" class="flex justify-center items-center py-5 text-pink-600 text-xl font-bold">Please log in to start !</h1>
+
+
+    <h1 sec:authorize="hasRole('ADMIN')" class="flex justify-center items-center py-5 text-pink-600 text-xl font-bold">Admin Dashboard</h1>
+    <div sec:authorize="hasRole('ADMIN')" class="bg-gray-80 w-full h-full py-5 flex justify-center items-center">
+        <div class="grid grid-flow-row-dense grid-cols-2 grid-rows-2 gap-6">
+
+            <div class="row-span-4">
+                <div class="relative pl-1 bg-gray-80 flex
+         justify-center rounded-xl hover:scale-105
+          duration-500 transform transition cursor-pointer">
+                    <div class="w-82 bg-white rounded-xl shadow-xl z-10">
+                        <div class="flex py-2 justify-center items-center">
+                            <img th:src="@{/images/list.png}"
+                                 class="max-h-60 object-cover rounded-t-xl" alt="">
+                        </div>
+                        <div class="px-2 py-1">
+                            <p class="flex justify-center items-center pb-1 md:pb-2 text-xs md:text-sm text-gray-500"></p>
+                            <a class="inset-x-0 bottom-0 flex justify-center bg-orange-500 hover:bg-white text-sm md:text-base border hover:border-2 hover:border-blue-500 rounded-xl p-1 text-gray-100 hover:text-blue-900"
+                               th:href="@{/patients-list}">List of patients</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-span-4">
+                <div class="relative pl-1 bg-gray-80 flex
+         justify-center rounded-xl hover:scale-105
+          duration-500 transform transition cursor-pointer">
+                    <div class="w-82 bg-white rounded-xl shadow-xl z-10">
+                        <div class="flex py-2 justify-center items-center">
+                            <img th:src="@{/images/patient.png}"
+                                 class="max-h-60 object-cover rounded-t-xl" alt="">
+                        </div>
+                        <div class="px-2 py-1">
+                            <p class="flex justify-center items-center pb-1 md:pb-2 text-xs md:text-sm text-gray-500"></p>
+                            <a class="inset-x-0 bottom-0 flex justify-center bg-green-500 hover:bg-white text-sm md:text-base border hover:border-2 hover:border-blue-500 rounded-xl p-1 text-gray-100 hover:text-blue-900"
+                               th:href="@{/add-patient}">Add a Patient</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h1 sec:authorize="hasRole('USER')" class="flex justify-center items-center py-5 text-pink-600 text-xl font-bold">User Dashboard</h1>
+    <div sec:authorize="hasRole('USER')" class="bg-gray-80 w-full h-full py-5 flex justify-center items-center">
+        <div class="grid grid-flow-row-dense grid-cols-2 grid-rows-2 gap-6">
+
+            <div class="row-span-8">
+                <div class="relative pl-1 bg-gray-80 flex
+         justify-center rounded-xl hover:scale-105
+          duration-500 transform transition cursor-pointer">
+                    <div class="w-82 bg-white rounded-xl shadow-xl z-10">
+                        <div class="flex py-2 justify-center items-center">
+                            <img th:src="@{/images/list.png}"
+                                 class="max-h-60 object-cover rounded-t-xl" alt="">
+                        </div>
+                        <div class="px-2 py-1">
+                            <p class="flex justify-center items-center pb-1 md:pb-2 text-xs md:text-sm text-gray-500"></p>
+                            <a class="inset-x-0 bottom-0 flex justify-center bg-orange-500 hover:bg-white text-sm md:text-base border hover:border-2 hover:border-blue-500 rounded-xl p-1 text-gray-100 hover:text-blue-900"
+                               th:href="@{/patients-list}">List of patients</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

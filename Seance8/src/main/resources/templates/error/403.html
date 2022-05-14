@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Error 403</title>
+</head>
+
+<div layout:fragment="content" th:align="center">
+
+    <div style="padding: 48px" class="flex flex-col justify-center h-full">
+        <div class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
+            <h3 style="padding: 48px">You are not authorized to view this page !</h3>
+        </div>
+    </div>
+</div>
+</html>
