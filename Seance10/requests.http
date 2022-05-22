@@ -1,0 +1,39 @@
+###
+GET http://localhost:8080/products
+Accept: application/json
+
+###
+GET http://localhost:8080/products/94b15a80-4b44-4d5b-bc6e-61966b9a5e2d
+Accept: application/json
+
+###
+DELETE http://localhost:8080/products/94b15a80-4b44-4d5b-bc6e-61966b9a5e2d
+Accept: application/json
+
+###
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+  "name": "MacBook Pro 2016",
+  "price": 12000,
+  "quantity": 120,
+  "categoryDTO": {
+    "id": 1,
+    "name": "Computers"
+  }
+}
+
+###
+PUT http://localhost:8080/products/f347fad1-2393-4a58-a0ea-a0639b6402c2
+Content-Type: application/json
+
+{
+  "name": "MacBook Pro 2016",
+  "price": 12500,
+  "quantity": 120,
+  "categoryDTO": {
+    "id": 1,
+    "name": "Computers"
+  }
+}
